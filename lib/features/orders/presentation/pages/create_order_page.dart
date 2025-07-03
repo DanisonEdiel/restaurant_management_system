@@ -328,7 +328,7 @@ class _CreateOrderPageState extends State<CreateOrderPage> {
                             ],
                           ),
                           const SizedBox(height: 8),
-                          if (_items.isEmpty)
+                          if (_orderItems.isEmpty)
                             const Center(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(vertical: 24),
@@ -342,10 +342,10 @@ class _CreateOrderPageState extends State<CreateOrderPage> {
                             ListView.separated(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
-                              itemCount: _items.length,
+                              itemCount: _orderItems.length,
                               separatorBuilder: (context, index) => const Divider(),
                               itemBuilder: (context, index) {
-                                final item = _items[index];
+                                final item = _orderItems[index];
                                 return Row(
                                   children: [
                                     Expanded(

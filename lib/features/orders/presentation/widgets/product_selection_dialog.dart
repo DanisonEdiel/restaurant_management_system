@@ -117,14 +117,10 @@ class _ProductSelectionDialogState extends State<ProductSelectionDialog> with Si
       return;
     }
 
-    final List<Map<String, dynamic>> selectedModifiersList = [];
+    final List<String> modifierNames = [];
     for (final modifierId in _selectedModifiers) {
       final modifier = _modifiers.firstWhere((m) => m['id'] == modifierId);
-      selectedModifiersList.add({
-        'id': modifier['id'],
-        'name': modifier['name'],
-        'price': modifier['price'],
-      });
+      modifierNames.add(modifier['name'] as String);
     }
 
     final orderItem = OrderItemModel(
@@ -134,11 +130,7 @@ class _ProductSelectionDialogState extends State<ProductSelectionDialog> with Si
       quantity: _quantity,
       unitPrice: _selectedProductPrice,
       total: _totalPrice,
-      modifiers: selectedModifiersList.map((m) => {
-        'id': m['id'] as String,
-        'name': m['name'] as String,
-        'price': m['price'] as double,
-      }).toList(),
+      modifiers: modifierNames,
       notes: _notesController.text.isNotEmpty ? _notesController.text : null,
     );
 

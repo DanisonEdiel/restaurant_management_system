@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:restaurant_management_system/core/navigation/app_router.dart';
 import 'package:restaurant_management_system/core/theme/app_theme.dart';
 import 'package:restaurant_management_system/features/orders/domain/entities/order.dart';
 import 'package:restaurant_management_system/features/orders/presentation/providers/order_provider.dart';
@@ -166,7 +167,7 @@ class _OrdersPageState extends State<OrdersPage> with SingleTickerProviderStateM
                   const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRouter.createOrderRoute);
+                      Navigator.pushNamed(context, '/orders/create');
                     },
                     child: const Text('Create New Order'),
                   ),
@@ -190,7 +191,7 @@ class _OrdersPageState extends State<OrdersPage> with SingleTickerProviderStateM
                     orderProvider.setCurrentOrder(order);
                     Navigator.pushNamed(
                       context,
-                      AppRouter.orderDetailsRoute,
+                      '/orders/details',
                       arguments: {'orderId': order.id},
                     );
                   },
@@ -202,7 +203,7 @@ class _OrdersPageState extends State<OrdersPage> with SingleTickerProviderStateM
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, AppRouter.createOrderRoute);
+          Navigator.pushNamed(context, '/orders/create');
         },
         backgroundColor: AppTheme.primaryColor,
         child: const Icon(Icons.add),

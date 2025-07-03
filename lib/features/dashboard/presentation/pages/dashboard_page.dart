@@ -174,23 +174,23 @@ class _DashboardPageState extends State<DashboardPage> {
         unselectedItemColor: Colors.grey,
         onTap: _onBottomNavTapped,
         items: const [
-          BottomNavigationBar.item(
+          BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Dashboard',
           ),
-          BottomNavigationBar.item(
+          BottomNavigationBarItem(
             icon: Icon(Icons.receipt_long),
             label: 'Orders',
           ),
-          BottomNavigationBar.item(
+          BottomNavigationBarItem(
             icon: Icon(Icons.payment),
             label: 'Billing',
           ),
-          BottomNavigationBar.item(
+          BottomNavigationBarItem(
             icon: Icon(Icons.inventory),
             label: 'Inventory',
           ),
-          BottomNavigationBar.item(
+          BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz),
             label: 'More',
           ),
